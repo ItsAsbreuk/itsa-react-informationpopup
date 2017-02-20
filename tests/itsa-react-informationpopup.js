@@ -26,10 +26,20 @@ describe("React Component", function () {
     });
 
     it("Rendering component", function () {
-        renderer.render(<Component />);
+        renderer.render(<Component popup="ok">i</Component>);
         const actual = renderer.getRenderOutput();
         const expected = (
-            <div />
+            <div className="itsa-informationpopup">
+                <div
+                    className="itsa-informationpopup-icon"
+                    onMouseEnter={function noRefCheck() {}}
+                    onMouseLeave={function noRefCheck() {}} >
+                    i
+                </div>
+                <div className="itsa-informationpopup-popup hidden">
+                    ok
+                </div>
+            </div>
         );
         expect(actual).to.equalJSX(expected);
     });
