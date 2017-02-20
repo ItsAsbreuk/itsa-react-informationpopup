@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/component.jsx - itsa-react-informationpopup</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="https://avatars0.githubusercontent.com/u/8314644?v=3&amp;s=84" title="itsa-react-informationpopup"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.0.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Component.html">Component</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/component.jsx.html">component.jsx</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: lib/component.jsx</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+&quot;use strict&quot;;
+
+/**
+ * Description here
+ *
+ *
+ *
+ * &lt;i&gt;Copyright (c) 2016 ItsAsbreuk - http://itsasbreuk.nl&lt;/i&gt;&lt;br&gt;
+ * New BSD License - http://choosealicense.com/licenses/bsd-3-clause/
+ *
+ *
+ * @module component.jsx
+ * @class Component
+ * @since 15.0.0
+*/
+
+const React = require(&#x27;react&#x27;),
+    PropTypes = React.PropTypes,
+    MAIN_CLASS = &#x27;itsa-informationpopup&#x27;,
+    LABEL_CLASS = MAIN_CLASS+&#x27;-icon&#x27;,
+    POPUP_NODE_CLASS = MAIN_CLASS+&#x27;-popup&#x27;;
+
+const Component = React.createClass({
+
+    propTypes: {
+        /**
+         * The Component its children
+         *
+         * @property children
+         * @type String || Object || Array
+         * @since 15.0.0
+        */
+
+        children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+        iconStyle: PropTypes.bool
+    },
+
+    getDefaultProps() {
+        return {
+            iconStyle: true
+        };
+    },
+
+    getInitialState() {
+        return {
+            hidden: true
+        };
+    },
+
+    handleMouseEnter() {
+        this.setState({hidden: false});
+    },
+
+    handleMouseLeave() {
+        this.setState({hidden: true});
+    },
+
+    /**
+     * React render-method --&gt; renderes the Component.
+     *
+     * @method render
+     * @return ReactComponent
+     * @since 15.0.0
+     */
+    render() {
+        let contentClass, popupNode;
+        const instance = this,
+            props = instance.props,
+            popupHTML = props.popupHTML,
+            popupClass = POPUP_NODE_CLASS + (instance.state.hidden ? &#x27; hidden&#x27; : &#x27;&#x27;);
+
+        if (props.iconStyle) {
+            contentClass = LABEL_CLASS;
+        }
+        if (popupHTML) {
+            popupNode = &lt;div className={popupClass} dangerouslySetInnerHTML={{__html: popupHTML}} /&gt;;
+        }
+        else {
+            popupNode = &lt;div className={popupClass}&gt;{props.popup}&lt;/div&gt;;
+        }
+        return (
+            &lt;div className={MAIN_CLASS}&gt;
+                &lt;div className={contentClass} onMouseEnter={instance.handleMouseEnter} onMouseLeave={instance.handleMouseLeave} &gt;{props.children}&lt;/div&gt;
+                {popupNode}
+            &lt;/div&gt;
+        );
+    }
+
+});
+
+module.exports = Component;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

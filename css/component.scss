@@ -1,0 +1,74 @@
+$trans-time: 0.5s;
+$size: 1.25em;
+$icon-background-color: #0078E7;
+$shadow: 3px;
+$width-popup: 15em;
+$shadow-opacity: 0.4;
+
+.itsa-informationpopup {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+
+    .itsa-informationpopup-icon {
+        width: $size;
+        height: $size;
+        line-height: $size;
+        font-size: 1em;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        border: solid 1px #000;
+        border-radius: $size;
+        background-color: $icon-background-color;
+        color: #FFF;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+    }
+
+    .itsa-informationpopup-popup {
+        position: absolute;
+        z-index: 1;
+        left: 100%;
+        left: calc(100% + 0.5em);
+        top: -0.4em;
+        width: $width-popup;
+        box-sizing: border-box;
+        border: solid 1px #000;
+        border-radius: 0.25em;
+        padding: 0.4em 0.5em;
+        background-color: #FFF;
+        color: #000;
+        -webkit-box-shadow: $shadow $shadow $shadow 0px rgba(0, 0, 0, $shadow-opacity);
+        -moz-box-shadow: $shadow $shadow $shadow 0px rgba(0, 0, 0, $shadow-opacity);
+        box-shadow: $shadow $shadow $shadow 0px rgba(0, 0, 0, $shadow-opacity);
+        opacity: 1;
+        -webkit-transition: opacity $trans-time;
+           -moz-transition: opacity $trans-time;
+            -ms-transition: opacity $trans-time;
+             -o-transition: opacity $trans-time;
+                transition: opacity $trans-time;
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+
+    .itsa-informationpopup-popup:before,
+    .itsa-informationpopup-popup::before {
+        border-bottom: 0.4em solid transparent;
+        border-right: 0.4em solid rgba(0,0,0,0.7);
+        border-top: 0.4em solid transparent;
+        position: absolute;
+        left: -0.4em;
+        top: 0.4em;
+        font-size: 1.2em;
+        content: "";
+        cursor: pointer;
+    }
+
+}
