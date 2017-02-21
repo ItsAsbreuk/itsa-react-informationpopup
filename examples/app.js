@@ -51,7 +51,7 @@
 	    Component = __webpack_require__(178);
 
 	var props = {
-	    popupHTML: 'Here <b>is</b> something incredably awesome I want to show. its is a long sentence, but that is the idea to show how it will break inside the popup.'
+	    popup: 'Here is something incredably awesome I want to show. its is a long sentence, but that is the idea to show how it will break inside the popup.'
 	};
 
 	ReactDOM.render(React.createElement(
@@ -21580,7 +21580,7 @@
 
 
 	// module
-	exports.push([module.id, ".itsa-informationpopup {\n  display: inline-block;\n  vertical-align: middle;\n  position: relative; }\n  .itsa-informationpopup .itsa-informationpopup-icon {\n    width: 1.25em;\n    height: 1.25em;\n    line-height: 1.25em;\n    font-size: 1em;\n    text-align: center;\n    vertical-align: middle;\n    box-sizing: border-box;\n    border: solid 1px #000;\n    border-radius: 1.25em;\n    background-color: #0078E7;\n    color: #FFF;\n    -webkit-user-select: none;\n    -khtml-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    cursor: default; }\n  .itsa-informationpopup .itsa-informationpopup-popup {\n    position: absolute;\n    z-index: 1;\n    left: 100%;\n    left: calc(100% + 0.5em);\n    top: -0.4em;\n    width: 15em;\n    box-sizing: border-box;\n    border: solid 1px #000;\n    border-radius: 0.25em;\n    padding: 0.4em 0.5em;\n    background-color: #FFF;\n    color: #000;\n    -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);\n    -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);\n    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);\n    opacity: 1;\n    -webkit-transition: opacity 0.5s;\n    -moz-transition: opacity 0.5s;\n    -ms-transition: opacity 0.5s;\n    -o-transition: opacity 0.5s;\n    transition: opacity 0.5s; }\n    .itsa-informationpopup .itsa-informationpopup-popup.hidden {\n      opacity: 0; }\n  .itsa-informationpopup .itsa-informationpopup-popup:before,\n  .itsa-informationpopup .itsa-informationpopup-popup::before {\n    border-bottom: 0.4em solid transparent;\n    border-right: 0.4em solid rgba(0, 0, 0, 0.7);\n    border-top: 0.4em solid transparent;\n    position: absolute;\n    left: -0.4em;\n    top: 0.4em;\n    font-size: 1.2em;\n    content: \"\";\n    cursor: pointer; }\n", ""]);
+	exports.push([module.id, ".itsa-informationpopup {\n  display: inline-block;\n  vertical-align: super;\n  position: absolute;\n  margin-top: -0.5em; }\n  .itsa-informationpopup .itsa-informationpopup-icon {\n    padding: 0 0.5em;\n    font-size: 1em;\n    text-align: center;\n    box-sizing: border-box;\n    border: solid 1px #000;\n    border-radius: 1em;\n    background-color: #0078E7;\n    color: #FFF;\n    -webkit-user-select: none;\n    -khtml-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    cursor: default; }\n  .itsa-informationpopup .itsa-informationpopup-popup {\n    position: absolute;\n    z-index: 1;\n    left: 100%;\n    left: calc(100% + 0.5em);\n    top: -0.4em;\n    width: 15em;\n    box-sizing: border-box;\n    border: solid 1px #000;\n    border-radius: 0.25em;\n    padding: 0.4em 0.5em;\n    background-color: #FFF;\n    color: #000;\n    -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);\n    -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);\n    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);\n    opacity: 1;\n    -webkit-transition: opacity 0.5s;\n    -moz-transition: opacity 0.5s;\n    -ms-transition: opacity 0.5s;\n    -o-transition: opacity 0.5s;\n    transition: opacity 0.5s; }\n    .itsa-informationpopup .itsa-informationpopup-popup.itsa-informationpopup-hidden {\n      opacity: 0; }\n  .itsa-informationpopup .itsa-informationpopup-popup:before,\n  .itsa-informationpopup .itsa-informationpopup-popup::before {\n    border-bottom: 0.4em solid transparent;\n    border-right: 0.4em solid rgba(0, 0, 0, 0.7);\n    border-top: 0.4em solid transparent;\n    position: absolute;\n    left: -0.4em;\n    top: 0.4em;\n    font-size: 1.2em;\n    content: \"\";\n    cursor: pointer; }\n", ""]);
 
 	// exports
 
@@ -21916,7 +21916,8 @@
 	    PropTypes = React.PropTypes,
 	    MAIN_CLASS = 'itsa-informationpopup',
 	    LABEL_CLASS = MAIN_CLASS + '-icon',
-	    POPUP_NODE_CLASS = MAIN_CLASS + '-popup';
+	    POPUP_NODE_CLASS = MAIN_CLASS + '-popup',
+	    HIDDEN_CLASS = MAIN_CLASS + '-hidden';
 
 	var Component = React.createClass({
 	    displayName: 'Component',
@@ -21966,7 +21967,7 @@
 	        var instance = this,
 	            props = instance.props,
 	            popupHTML = props.popupHTML,
-	            popupClass = POPUP_NODE_CLASS + (instance.state.hidden ? ' hidden' : '');
+	            popupClass = POPUP_NODE_CLASS + (instance.state.hidden ? ' ' + HIDDEN_CLASS : '');
 
 	        if (props.iconStyle) {
 	            contentClass = LABEL_CLASS;

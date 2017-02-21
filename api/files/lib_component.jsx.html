@@ -101,7 +101,8 @@ const React = require(&#x27;react&#x27;),
     PropTypes = React.PropTypes,
     MAIN_CLASS = &#x27;itsa-informationpopup&#x27;,
     LABEL_CLASS = MAIN_CLASS+&#x27;-icon&#x27;,
-    POPUP_NODE_CLASS = MAIN_CLASS+&#x27;-popup&#x27;;
+    POPUP_NODE_CLASS = MAIN_CLASS+&#x27;-popup&#x27;,
+    HIDDEN_CLASS = MAIN_CLASS+&#x27;-hidden&#x27;;
 
 const Component = React.createClass({
 
@@ -150,7 +151,7 @@ const Component = React.createClass({
         const instance = this,
             props = instance.props,
             popupHTML = props.popupHTML,
-            popupClass = POPUP_NODE_CLASS + (instance.state.hidden ? &#x27; hidden&#x27; : &#x27;&#x27;);
+            popupClass = POPUP_NODE_CLASS + (instance.state.hidden ? &#x27; &#x27;+HIDDEN_CLASS : &#x27;&#x27;);
 
         if (props.iconStyle) {
             contentClass = LABEL_CLASS;

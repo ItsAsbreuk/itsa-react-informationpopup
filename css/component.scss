@@ -1,5 +1,4 @@
 $trans-time: 0.5s;
-$size: 1.25em;
 $icon-background-color: #0078E7;
 $shadow: 3px;
 $width-popup: 15em;
@@ -7,19 +6,18 @@ $shadow-opacity: 0.4;
 
 .itsa-informationpopup {
     display: inline-block;
-    vertical-align: middle;
-    position: relative;
+    vertical-align: super;
+    position: absolute;
+    margin-top: -0.5em;
 
     .itsa-informationpopup-icon {
-        width: $size;
-        height: $size;
-        line-height: $size;
+        padding: 0 0.5em;
         font-size: 1em;
+        font-weight: normal;
         text-align: center;
-        vertical-align: middle;
         box-sizing: border-box;
         border: solid 1px #000;
-        border-radius: $size;
+        border-radius: 1em;
         background-color: $icon-background-color;
         color: #FFF;
         -webkit-user-select: none;
@@ -53,7 +51,7 @@ $shadow-opacity: 0.4;
              -o-transition: opacity $trans-time;
                 transition: opacity $trans-time;
 
-        &.hidden {
+        &.itsa-informationpopup-hidden {
             opacity: 0;
         }
     }
