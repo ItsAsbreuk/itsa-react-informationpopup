@@ -36,7 +36,7 @@ describe("React Component", function () {
                     onMouseLeave={function noRefCheck() {}} >
                     i
                 </div>
-                <div className="itsa-informationpopup-popup hidden">
+                <div className="itsa-informationpopup-popup itsa-informationpopup-hidden">
                     ok
                 </div>
             </div>
