@@ -55,24 +55,24 @@
     "classitems": [
         {
             "file": "lib/component.jsx",
-            "line": 27,
-            "description": "The Component its children",
-            "itemtype": "property",
-            "name": "children",
-            "type": "String || Object || Array",
-            "since": "15.0.0",
-            "class": "Component",
-            "module": "component.jsx"
-        },
-        {
-            "file": "lib/component.jsx",
-            "line": 59,
+            "line": 43,
             "description": "React render-method --> renderes the Component.",
             "itemtype": "method",
             "name": "render",
             "return": {
                 "description": "ReactComponent"
             },
+            "since": "15.0.0",
+            "class": "Component",
+            "module": "component.jsx"
+        },
+        {
+            "file": "lib/component.jsx",
+            "line": 76,
+            "description": "The Component its children",
+            "itemtype": "property",
+            "name": "children",
+            "type": "String || Object || Array",
             "since": "15.0.0",
             "class": "Component",
             "module": "component.jsx"

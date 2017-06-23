@@ -15,46 +15,30 @@
 */
 
 const React = require('react'),
-    PropTypes = React.PropTypes,
+    PropTypes = require("prop-types"),
     MAIN_CLASS = 'itsa-informationpopup',
     LABEL_CLASS = MAIN_CLASS+'-icon',
     POPUP_NODE_CLASS = MAIN_CLASS+'-popup',
     HIDDEN_CLASS = MAIN_CLASS+'-hidden';
 
-const Component = React.createClass({
-
-    propTypes: {
-        /**
-         * The Component its children
-         *
-         * @property children
-         * @type String || Object || Array
-         * @since 15.0.0
-        */
-
-        children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-        iconStyle: PropTypes.bool
-    },
-
-    getDefaultProps() {
-        return {
-            iconStyle: true
-        };
-    },
-
-    getInitialState() {
-        return {
+class Component extends React.Component {
+    constructor(props) {
+        super(props);
+        const instance = this;
+        instance.state = {
             hidden: true
         };
-    },
+        instance.handleMouseEnter = instance.handleMouseEnter.bind(instance);
+        instance.handleMouseLeave = instance.handleMouseLeave.bind(instance);
+    }
 
     handleMouseEnter() {
         this.setState({hidden: false});
-    },
+    }
 
     handleMouseLeave() {
         this.setState({hidden: true});
-    },
+    }
 
     /**
      * React render-method --> renderes the Component.
@@ -86,7 +70,23 @@ const Component = React.createClass({
             </div>
         );
     }
+}
 
-});
+Component.propTypes = {
+    /**
+     * The Component its children
+     *
+     * @property children
+     * @type String || Object || Array
+     * @since 15.0.0
+    */
+
+    children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    iconStyle: PropTypes.bool
+};
+
+Component.defaultProps = {
+    iconStyle: true
+};
 
 module.exports = Component;
