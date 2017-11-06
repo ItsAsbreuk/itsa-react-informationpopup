@@ -43,25 +43,24 @@ $shadow-opacity: 0.4;
         padding: 0.4em 0.5em;
         background-color: #FFF;
         color: #000;
-        -webkit-box-shadow: $shadow $shadow $shadow 0px rgba(0, 0, 0, $shadow-opacity);
-        -moz-box-shadow: $shadow $shadow $shadow 0px rgba(0, 0, 0, $shadow-opacity);
-        box-shadow: $shadow $shadow $shadow 0px rgba(0, 0, 0, $shadow-opacity);
+        -webkit-box-shadow: $shadow $shadow $shadow 0 rgba(0, 0, 0, $shadow-opacity);
+        -moz-box-shadow: $shadow $shadow $shadow 0 rgba(0, 0, 0, $shadow-opacity);
+        box-shadow: $shadow $shadow $shadow 0 rgba(0, 0, 0, $shadow-opacity);
         opacity: 1;
         -webkit-transition: opacity $trans-time;
-           -moz-transition: opacity $trans-time;
-            -ms-transition: opacity $trans-time;
-             -o-transition: opacity $trans-time;
-                transition: opacity $trans-time;
+        -moz-transition: opacity $trans-time;
+        -ms-transition: opacity $trans-time;
+        -o-transition: opacity $trans-time;
+        transition: opacity $trans-time;
 
         &.itsa-informationpopup-hidden {
             opacity: 0;
         }
     }
 
-    .itsa-informationpopup-popup:before,
     .itsa-informationpopup-popup::before {
         border-bottom: 0.4em solid transparent;
-        border-right: 0.4em solid rgba(0,0,0,0.7);
+        border-right: 0.4em solid rgba(0, 0, 0, 0.7);
         border-top: 0.4em solid transparent;
         position: absolute;
         left: -0.4em;
@@ -70,5 +69,4 @@ $shadow-opacity: 0.4;
         content: "";
         cursor: pointer;
     }
-
 }

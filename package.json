@@ -1,6 +1,6 @@
 {
   "name": "itsa-react-informationpopup",
-  "version": "16.0.0",
+  "version": "16.0.3",
   "description": "info-icon with a popup on mouseover",
   "author": [
     {
@@ -35,8 +35,7 @@
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {
-    "react": ">=15",
-    "react-dom": ">=15"
+    "react": ">=15"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
